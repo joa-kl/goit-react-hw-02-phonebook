@@ -31,7 +31,7 @@ export class App extends Component {
     } else {
       contactsLists.push({ name, id, number });
     }
-
+    
     this.setState({ contacts: contactsLists });
   };
 
