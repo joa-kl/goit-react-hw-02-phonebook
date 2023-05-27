@@ -15,15 +15,15 @@ export class App extends Component {
     filter: '',
   };
 
-  handleChange = e => {
-    const { name, value } = e.target;
+  handleChange = evt => {
+    const { name, value } = evt.target;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = evt => {
     const id = nanoid();
-    const name = e.name;
-    const number = e.number;
+    const name = evt.name;
+    const number = evt.number;
     const contactsLists = [...this.state.contacts];
 
     if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
@@ -35,9 +35,9 @@ export class App extends Component {
     this.setState({ contacts: contactsLists });
   };
 
-  handleDelete = e => {
+  handleDelete = evt => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== e),
+      contacts: prevState.contacts.filter(contact => contact.id !== evt),
     }));
   };
 
