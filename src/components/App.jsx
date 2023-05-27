@@ -57,15 +57,15 @@ export class App extends Component {
 
     return (
       <div
-        // style={{
-        //   height: '100vh',
-        //   display: 'flex',
-        //   flexDirection: 'column',
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        //   fontSize: 20,
-        //   color: '#010101',
-        // }}
+        style={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 20,
+          color: '#010101',
+        }}
       >
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
