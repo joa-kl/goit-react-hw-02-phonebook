@@ -8,7 +8,7 @@ export const Filter = ({ filter, handleChange }) => (
       className={css.filterName}
       type="text"
       name="filter"
-      placeholder="Enter filter"
+      placeholder="Enter name"
       value={filter}
       onChange={handleChange}
     />
