@@ -1,4 +1,5 @@
 import { Component } from "react";
+import css from "./ContactForm.module.css"
 
 export class ContactForm extends Component {
     state = {
@@ -23,8 +24,8 @@ export class ContactForm extends Component {
         const { name, number } = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>Name</label>
+            <form onSubmit={this.handleSubmit} className={css.form}>
+                <label className={css.label}>Name</label>
                     <input
                         type="text"
                         name="name"
@@ -34,9 +35,10 @@ export class ContactForm extends Component {
                         placeholder="Enter name"
                         value={name}
                         onChange={this.handleChange}
+                        className={css.input}
                         required
                 />
-                <label>Number</label>
+                <label className={css.label}>Number</label>
                     <input
                         type="tel"
                         name="number"
@@ -45,10 +47,11 @@ export class ContactForm extends Component {
                         placeholder="Enter phone number"
                         value={number}
                         onChange={this.handleChange}
+                        className={css.input}
                         required
                         />
 
-                    <button type="submit">Add to contact</button>
+                    <button type="submit" className={css.button}>Add contact</button>
             </form>
         )
     
