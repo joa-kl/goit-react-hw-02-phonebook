@@ -6,14 +6,14 @@ export class ContactForm extends Component {
         number: '',
     };
 
-    handleChange = e => {
-        const { name, value } = e.target;
+    handleChange = evt => {
+        const { name, value } = evt.target;
         this.setState({ [name]: value });
     };
     
-    handleSubmit = e => {
-        e.preventDefault();
-        const form = e.currentTarget;
+    handleSubmit = evt => {
+        evt.preventDefault();
+        const form = evt.currentTarget;
         this.props.handleSubmit(this.state);
         form.reset();
     };
