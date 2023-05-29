@@ -1,3 +1,4 @@
+import css from './App.module.css';
 import { Component } from "react";
 import { nanoid } from 'nanoid';
 import { ContactForm } from "./Form/ContactForm";
@@ -55,17 +56,7 @@ export class App extends Component {
     const { filter } = this.state;
 
     return (
-      <div
-        style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 20,
-          color: '#010101',
-        }}
-      >
+      <div className={css.container}>
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
         <h2> Contacts</h2>
