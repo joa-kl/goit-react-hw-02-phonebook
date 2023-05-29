@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import css from './Filter.module.css';
 
-export const Filter = ({ filter, handleChange }) => (
+export const Filter = ({ filter, onFilterChange }) => (
   <div className={css.container}>
     <label className={css.filterLabel}>Find contacts by name </label>
     <input
@@ -10,7 +10,7 @@ export const Filter = ({ filter, handleChange }) => (
       name="filter"
       placeholder="Enter name"
       value={filter}
-      onChange={handleChange}
+      onChange={onFilterChange}
     />
   </div>
 );

@@ -16,12 +16,12 @@ export class App extends Component {
     filter: '',
   };
 
-  handleChange = evt => {
+  handleFilterChange = evt => {
     const { name, value } = evt.target;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = evt => {
+  handleContactFormSubmit = evt => {
     const id = nanoid();
     const name = evt.name;
     const number = evt.number;
@@ -35,7 +35,7 @@ export class App extends Component {
     this.setState({ contacts: contactsLists });
   };
 
-  handleDelete = evt => {
+  handleContactDelete = evt => {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== evt),
     }));
@@ -58,12 +58,12 @@ export class App extends Component {
     return (
       <div className={css.container}>
         <h1>Phonebook</h1>
-        <ContactForm handleSubmit={this.handleSubmit} />
+        <ContactForm onSubmit={this.handleContactFormSubmit} />
         <h2> Contacts</h2>
-        <Filter filter={filter} handleChange={this.handleChange} />
+        <Filter filter={filter} onFilterChange={this.handleFilterChange} />
         <ContactList
           contacts={this.getFilteredContacts()}
-          handleDelete={this.handleDelete}
+          handleDelete={this.handleContactDelete}
         />
       </div>
     );
