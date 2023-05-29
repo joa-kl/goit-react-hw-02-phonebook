@@ -2,7 +2,7 @@ import propTypes from 'prop-types';
 // const { Component } = require("react");
 import css from './ContactList.module.css'
 
-export const ContactList = ({ contacts, handleDelete }) => (
+export const ContactList = ({ contacts, onContactDelete }) => (
   <div>
     <ul>
       {contacts.map((contact, id) => (
@@ -11,7 +11,7 @@ export const ContactList = ({ contacts, handleDelete }) => (
           <button
             type="button"
             className={css.contactListItemBtn}
-            onClick={() => handleDelete(contact.id)}
+            onClick={() => onContactDelete(contact.id)}
           >
             Delete
           </button>
@@ -24,10 +24,10 @@ export const ContactList = ({ contacts, handleDelete }) => (
 ContactList.propTypes = {
   contacts: propTypes.arrayOf(
     propTypes.exact({
-      id: propTypes.number.isRequired,
+      id: propTypes.string.isRequired,
       name: propTypes.string.isRequired,
       number: propTypes.string.isRequired,
     })
   ),
-  handleDelete: propTypes.func.isRequired,
+  onContactDelete: propTypes.func.isRequired,
 };

@@ -51,7 +51,6 @@ export class App extends Component {
     return filterContactsList;
   };
   
- 
    render() {
     const { filter } = this.state;
 
@@ -63,7 +62,7 @@ export class App extends Component {
         <Filter filter={filter} onFilterChange={this.handleFilterChange} />
         <ContactList
           contacts={this.getFilteredContacts()}
-          handleDelete={this.handleContactDelete}
+          onContactDelete={this.handleContactDelete}
         />
       </div>
     );
