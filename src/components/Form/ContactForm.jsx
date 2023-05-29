@@ -12,10 +12,11 @@ export class ContactForm extends Component {
         this.setState({ [name]: value });
     };
     
-    handleSubmit = evt => {
+    handleFormSubmit = evt => {
         evt.preventDefault();
+        const { name, number } = this.state;
         const form = evt.currentTarget;
-        this.props.handleSubmit(this.state);
+        this.props.onSubmit({ name, number});
         form.reset();
     };
 
@@ -24,7 +25,7 @@ export class ContactForm extends Component {
         const { name, number } = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit} className={css.form}>
+            <form onSubmit={this.handleFormSubmit} className={css.form}>
                 <label className={css.label}>Name</label>
                     <input
                         type="text"
